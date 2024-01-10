@@ -1,0 +1,151 @@
+.header__nav-list {
+    display: flex;
+}
+
+.header__nav-item {
+    padding-left: 60px;
+}
+
+.header__nav-item a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.header__logout{
+    border: none;
+    font-size: 14px;
+    background-color: #fff;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.record__content {
+    max-width: 1230px;
+}
+
+.record__user-name {
+    margin: 35px;
+    text-align: center;
+}
+/* パターン１(formを分けない場合) */
+/* .work__start{
+    position: absolute;
+    top: 28%;
+    left: 20%;
+}
+
+.work__start-submit {
+    background-color: #fff;
+    border: none;
+    width: 350px;
+    height: 120px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.break__start{
+    position: absolute;
+    top: 53%;
+    left: 20%;
+}
+
+.break__start-submit {
+    background-color: #fff;
+    border: none;
+    width: 350px;
+    height: 120px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.work__end{
+    position: absolute;
+    top: 28%;
+    left: 49%;
+}
+
+.work__end-submit {
+    background-color: #fff;
+    border: none;
+    width: 350px;
+    height: 120px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.break__end{
+    position: absolute;
+    top: 53%;
+    left: 49%;
+    }
+
+.break__end-submit {
+    background-color: #fff;
+    border: none;
+    width: 350px;
+    height: 120px;
+    cursor: pointer;
+    font-size: 20px;
+} */
+
+/* パターン２ （formを分ける場合）*/
+.record__button-box{
+    display:grid;
+    grid-template-rows: 180px 180px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.work__start {
+    padding: 10px 30px 50px 240px;
+}
+
+.work__start-submit {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+}
+
+.work__end {
+    padding: 10px 240px 50px 30px;
+}
+
+.work__end-submit {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+}
+
+.break__start {
+    padding: 10px 30px 50px 240px;
+}
+
+.break__start-submit {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+}
+
+.break__end {
+    padding: 10px 240px 50px 30px;
+}
+
+.break__end-submit {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+}

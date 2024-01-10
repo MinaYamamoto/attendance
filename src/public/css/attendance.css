@@ -1,0 +1,57 @@
+.header__nav-list {
+    display: flex;
+}
+
+.header__nav-item {
+    padding-left: 60px;
+}
+
+.header__nav-item a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.header__logout{
+    border: none;
+    font-size: 14px;
+    background-color: #fff;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.attendance-header {
+    padding: 13px;
+    text-align: center;
+}
+
+.attendance-header h2{
+    font-size: 17px;
+}
+
+.form__attendance table {
+    width: 1000px;
+    margin: 5px auto;
+}
+
+.form__attendance th {
+    padding: 15px 5px 15px 30px;
+    width: 20%;
+    text-align: left;
+    border-top: 1px solid rgb(200, 197, 197);
+    font-size: 13px;
+}
+
+.form__attendance td {
+    padding: 15px 30px;
+    width: 20%;
+    text-align: left;
+    border-top: 1px solid rgb(200, 197, 197);
+    font-size: 13px;
+}
+
+.form__paginate {
+    text-align: center;
+}
