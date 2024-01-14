@@ -22,36 +22,47 @@
     <form class="record__header" action="/" method="GET">
         @csrf
         <div class="record__user-name">
-            <!-- DBから名前を取得するように修正する -->
-            <p>テスト　太郎さんお疲れ様です!</p>
+            <p>{{ $message }}</p>
         </div>
     </form>
-    <!-- <form class="record__start" action="/recordstart" method="POST">
-        <div class="work__start"><button class="work__start-submit" value="work__start" type="submit">勤務開始</button></div>
-        <div class="break__start"><button class="break__start-submit" value="break__start" type="submit">休憩開始</button></div>
-    </form>
-    <form class="record__end" action="/recordend" method="POST">
-        <div class="work__end"><button class="work__end-submit" value="work__end">勤務終了</button></div>
-        <div class="break__end"><button class="break__end-submit" value="break__end">休憩終了</button></div>
-    </form> -->
     <div class="record__button-box">
         <form class="work__start" action="/workstart" method="post">
             @csrf
-            <button class="work__start-submit" type="submit">勤務開始</button>
+            @if($leaving_work_count == 1)
+            <input class="work__start-submit" type="submit" name="work__start" id="work__start" value="勤務開始" disabled>
+            @elseif($work_count == 0)
+            <input class="work__start-submit" type="submit" name="work__start" id="work__start" value="勤務開始">
+            @else
+            <input class="work__start-submit" type="submit" name="work__start" id="work__start" value="勤務開始" disabled>
+            @endif
         </form>
         <form class="work__end" action="/workend" method="post">
             @method('PATCH')
             @csrf
-            <button class="work__end-submit" type="submit" disabled>勤務終了</button>
+            @if($work_count == 1 && $rest_count > 0)
+            <input class="work__end-submit" type="submit" name="work__end" id="work__end" value="勤務終了" disabled>
+            @elseif($work_count == 0)
+            <input class="work__end-submit" type="submit" name="work__end" id="work__end" value="勤務終了" disabled>
+            @else
+            <input class="work__end-submit" type="submit" name="work__end" id="work__end" value="勤務終了" >
+            @endif
         </form>
-        <form class="break__start" action="/breakstart" method="post">
+        <form class="rest__start" action="/reststart" method="post">
             @csrf
-            <button class="break__start-submit" type="submit">休憩開始</button>
+            @if($work_count > 0 && $rest_count == 0)
+            <input class="rest__start-submit" type="submit" name="rest__start" id="rest__start" value="休憩開始">
+            @else
+            <input class="rest__start-submit" type="submit" name="rest__start" id="rest__start" value="休憩開始"disabled>
+            @endif
         </form>
-        <form class="break__end" action="/breakend" method="post" disabled>
+        <form class="rest__end" action="/restend" method="post">
             @method('PATCH')
             @csrf
-            <button class="break__end-submit" type="submit" disabled>休憩終了</button>
+            @if($rest_count == 0)
+            <input class="rest__end-submit" type="submit" name="rest__end" id="rest__end" value="休憩終了" disabled>
+            @else
+            <input class="rest__end-submit" type="submit" name="rest__end" id="rest__end" value="休憩終了">
+            @endif
         </form>
     </div>
 </div>

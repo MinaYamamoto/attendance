@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WorkTimeController;
+use App\Http\Controllers\TimeRecordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,9 @@ use App\Http\Controllers\WorkTimeController;
 */
 
 Route::middleware('auth')->group(function() {
-    Route::get('/',[WorkTimeController::class, 'index']);
+    Route::get('/',[TimeRecordController::class, 'index']);
+    Route::post('/workstart', [TimeRecordController::class, 'store']);
+    Route::post('/reststart', [TimeRecordController::class, 'store']);
+    Route::patch('/workend', [TimeRecordController::class, 'update']);
+    Route::patch('/restend', [TimeRecordController::class, 'update']);
 });
