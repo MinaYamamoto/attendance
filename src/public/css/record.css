@@ -30,68 +30,7 @@
     margin: 35px;
     text-align: center;
 }
-/* パターン１(formを分けない場合) */
-/* .work__start{
-    position: absolute;
-    top: 28%;
-    left: 20%;
-}
 
-.work__start-submit {
-    background-color: #fff;
-    border: none;
-    width: 350px;
-    height: 120px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.break__start{
-    position: absolute;
-    top: 53%;
-    left: 20%;
-}
-
-.break__start-submit {
-    background-color: #fff;
-    border: none;
-    width: 350px;
-    height: 120px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.work__end{
-    position: absolute;
-    top: 28%;
-    left: 49%;
-}
-
-.work__end-submit {
-    background-color: #fff;
-    border: none;
-    width: 350px;
-    height: 120px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.break__end{
-    position: absolute;
-    top: 53%;
-    left: 49%;
-    }
-
-.break__end-submit {
-    background-color: #fff;
-    border: none;
-    width: 350px;
-    height: 120px;
-    cursor: pointer;
-    font-size: 20px;
-} */
-
-/* パターン２ （formを分ける場合）*/
 .record__button-box{
     display:grid;
     grid-template-rows: 180px 180px;
@@ -124,11 +63,11 @@
     border: none;
 }
 
-.break__start {
+.rest__start {
     padding: 10px 30px 50px 240px;
 }
 
-.break__start-submit {
+.rest__start-submit {
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -137,11 +76,11 @@
     border: none;
 }
 
-.break__end {
+.rest__end {
     padding: 10px 240px 50px 30px;
 }
 
-.break__end-submit {
+.rest__end-submit {
     width: 100%;
     height: 100%;
     background-color: #fff;
