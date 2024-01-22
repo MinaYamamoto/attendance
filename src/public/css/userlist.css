@@ -22,30 +22,16 @@
     cursor: pointer;
 }
 
-.attendance__day {
-    width: 1000px;
+.userlist {
+    padding-top: 30px;
+}
+
+.userlist__form table {
+    width: 800px;
     margin: 5px auto;
 }
 
-.attendance__inner{
-    width: 100%;
-    padding: 15px 0 20px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.attendance__inner input{
-    text-align: center;
-    border: none;
-    background-color: rgb(244, 241, 241);
-}
-
-.form__attendance table {
-    width: 1000px;
-    margin: 5px auto;
-}
-
-.form__attendance th {
+.userlist__form th {
     padding: 15px 5px 15px 30px;
     width: 20%;
     text-align: left;
@@ -53,12 +39,24 @@
     font-size: 13px;
 }
 
-.form__attendance td {
+.userlist__form td {
     padding: 15px 30px;
     width: 20%;
     text-align: left;
     border-top: 1px solid rgb(200, 197, 197);
     font-size: 13px;
+}
+
+.userlist__work{
+    padding: 8px 30px 8px 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(25, 64, 241);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .form__paginate {
@@ -68,4 +66,4 @@
 svg.w-5.h-5 {
     width: 30px;
     height: 30px;
-    }
+}

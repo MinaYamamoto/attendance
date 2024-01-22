@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/attendance.css') }}">
+<link rel="stylesheet" href="{{ asset('css/userlistworkshow.css') }}">
 @endsection
 
 @section('header')
@@ -19,23 +19,25 @@
 @endsection
 
 @section('content')
-<div class="attendance__content">
-    <form class="attendance-form" action="/attendance/search" method="get">
+<div class="userwork">
+    <form class="userwork-form" action="/userlist/worksearch" method="get">
         @csrf
-        <div class="attendance__day">
-            <div class="attendance__inner">
-                <button name="sub_day" type="submit" value="sub_day">◀</button>
-                <input name="search_day" value="{{$search_date->format('Y-m-d')}}" readonly/>
-                <button name="add_day" type="submit" value="add_day">▶</button>
+            @foreach($users as $user)
+            <p class="user__name">ユーザ名：{{$user->name}}</p>
+            @endforeach
+        <div class="userwork-header">
+            <div class="search">
+                <label>勤務月：</label>
+                <button type="submit" class="search__last-month" name="last_month" value="last_month">前月</button>
+                <input class="search__month" name="search_month" value="{{$search_month->format('Y-m')}}" readonly/>
+                <input type="hidden" name="user_id" value="{{ $user_id }}" />
+                <button type="submit" class="search__next-month" name="next_month" value="next_month">翌月</button>
             </div>
         </div>
-    </form>
-    <form class="attendance-form" action="/attendance" method="get">
-        @csrf
-        <div class="form__attendance">
+        <div class="userwork__table">
             <table>
                 <tr>
-                    <th>名前</th>
+                    <th>勤務日</th>
                     <th>勤務開始</th>
                     <th>勤務終了</th>
                     <th>休憩時間</th>
@@ -43,7 +45,7 @@
                 </tr>
                 @foreach($works as $work)
                 <tr>
-                    <td>{{ $work->user->name }}</td>
+                    <td>{{ $work->work_date }}</td>
                     <td>{{ $work->start_time }}</td>
                     <td>{{ $work->end_time }}</td>
                     <td>{{ $work->getRestTime() }}</td>
@@ -57,4 +59,4 @@
         </div>
     </form>
 </div>
-@endsection
+    @endsection
