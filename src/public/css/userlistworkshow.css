@@ -22,50 +22,63 @@
     cursor: pointer;
 }
 
-.attendance__day {
-    width: 1000px;
-    margin: 5px auto;
-}
-
-.attendance__inner{
-    width: 100%;
-    padding: 15px 0 20px 0;
+.userwork-header{
     display: flex;
-    justify-content: center;
+    width: 1000px;
+    height: 40px;
+    padding-top: 5px;
 }
 
-.attendance__inner input{
+.search{
+    width: 50%;
+    padding: 0 0 0 150px;
+}
+
+.search label {
+    font-size: 14px;
+}
+
+.search__month{
+    width: 18%;
+    font-size:14px;
     text-align: center;
     border: none;
     background-color: rgb(244, 241, 241);
 }
 
-.form__attendance table {
+.search button{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(105, 105, 105);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.user__name{
+    margin: 10px 0 0 0;
+    padding: 0 0 0 150px;
+    font-size: 14px;
+}
+
+.userwork__table table {
     width: 1000px;
     margin: 5px auto;
 }
 
-.form__attendance th {
-    padding: 15px 5px 15px 30px;
+.userwork__table th {
+    padding: 5px 5px 5px 30px;
     width: 20%;
     text-align: left;
     border-top: 1px solid rgb(200, 197, 197);
     font-size: 13px;
 }
 
-.form__attendance td {
-    padding: 15px 30px;
+.userwork__table td {
+    padding: 5px 30px;
     width: 20%;
     text-align: left;
     border-top: 1px solid rgb(200, 197, 197);
     font-size: 13px;
 }
-
-.form__paginate {
-    text-align: center;
-}
-
-svg.w-5.h-5 {
-    width: 30px;
-    height: 30px;
-    }

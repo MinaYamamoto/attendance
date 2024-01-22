@@ -27,6 +27,7 @@ class TimeRecordController extends Controller
         }else{
             $rest_count = 0;
         }
+
         if (isset($old_work)) {
             $old_workday = strtotime($old_work->work_date);
             $old_rest = Rest::where('work_id', $old_work->id)->whereNull('end_time')->first();

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class Rest extends Model
 {
@@ -12,6 +14,7 @@ class Rest extends Model
     protected $fillable=['work_id', 'start_time', 'end_time'];
 
     public function work() {
-        return $this->belongsTo(Work::class());
+        return $this->belongsTo(Work::class);
     }
+
 }
