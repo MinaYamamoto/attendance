@@ -16,7 +16,7 @@ class Work extends Model
     public function getWorkTime() {
         $rests = DB::table('rests')->select(['id','work_id', 'start_time', 'end_time'])->orderBy('work_id', 'asc')->get();
 
-        $work_time = 0;
+        $work_time = "00:00:00";
         $rest_total = 0;
 
         foreach($rests as $value) {
@@ -49,6 +49,7 @@ class Work extends Model
         $rests = DB::table('rests')->select(['id','work_id', 'start_time', 'end_time'])->orderBy('work_id', 'asc')->get();
 
         $rest_total = 0;
+        $rest_time = "00:00:00";
 
         foreach($rests as $value) {
             if($value->work_id === $this->id) {
