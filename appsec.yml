@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/attendance
+  - source: /src
+    destination: /var/www/attendance/src
 hooks:
   AfterInstall:
     - location: scripts/change_permissions.sh
