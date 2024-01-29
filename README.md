@@ -12,13 +12,15 @@
 
 ##アプリケーション URL
 
-CodeCommit
+AWS　CodeCommit
 
 https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/attendance
 
 ID:testuser-at-058264478200
 
 PASS:HjIMQM63kzH0KrdHfZOwuDyAKUZ/HrrnL/22JsToTuE=
+
+AWS　（IAMユーザとしてコンソールにサインインする場合は以下を使用してください）
 
 コンソールサインイン：https://058264478200.signin.aws.amazon.com/console
 
