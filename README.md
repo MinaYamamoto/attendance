@@ -11,8 +11,14 @@
 概要：人事評価のため勤怠管理システムを導入する
 
 ##アプリケーション URL
-本番環境は、AWS を使用
-パブリック IP アドレス：http://54.248.86.202/
+
+CodeCommit
+
+https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/attendance
+
+ID:testuser-at-058264478200
+
+PASS:HjIMQM63kzH0KrdHfZOwuDyAKUZ/HrrnL/22JsToTuE=
 
 コンソールサインイン：https://058264478200.signin.aws.amazon.com/console
 
@@ -20,17 +26,31 @@
 
 コンソールパスワード：testuser1&
 
+パブリック IP アドレス：http://54.248.86.202/
+
 ##他のリポジトリ
 
-CodeCommit：ssh://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/attendance
-
-※ミラーリング設定済
-
 ##機能一覧
-※未記載
+
+会員登録機能（メールによる認証機能あり）
+
+ログイン機能
+
+ログアウト機能
+
+勤務開始/終了打刻機能
+
+休憩開始/終了打刻機能
+
+日付別勤怠情報表示機能
+
+ユーザ一覧表示機能
+
+ユーザ別勤怠情報表示機能
 
 ##使用技術（実行環境）
-PHP:8.2.12
+
+PHP:8.0
 
 Laravel:8.6.12
 
@@ -78,24 +98,22 @@ MAIL_HOST=mailcatcher
 
 MAIL_FROM_ADDRESS=mailcatcher@example.com
 
-5.「docker-compose.yml」ファイルに設定追加
-
-mailcatcher:
-
-image: schickling/mailcatcher
-
-ports: - "1080:1080"
-
-6.アプリケーション起動のためのキーを生成
+5.アプリケーション起動のためのキーを生成
 　 php artisan key:generate
 
-7.マイグレーションを実行
+6.マイグレーションを実行
 　 php artisan migrate
 
-8.データベースへテスト用の初期データを投入
+7.データベースへテスト用の初期データを投入
 　 php artisan db:seed
 
 ##その他記述
-　認証メールの確認には MailCatcher を使用しています。
+開発環境はローカル、本番環境は AWS を使用しています。
 
-認証メールを確認する場合は「http://localhost:1080/」にアクセスしてください。
+AWS は SSL 認証の設定を行っていません。「http」にてアクセスしてください。
+
+認証メールの確認には MailCatcher を使用しています。
+
+ローカルで認証メールを確認する場合は「http://localhost:1080/」にアクセスしてください。
+
+AWS より認証メールを確認する場合は「http://54.248.86.202:1080/」にアクセスしてください。
