@@ -3,4 +3,3 @@ os: linux
 files:
   - source: /src
     destination: /var/www/attendance/src
-  file_exists_behavior: OVERWRITE
