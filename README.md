@@ -12,53 +12,61 @@
 
 ##アプリケーション URL
 
-AWS　CodeCommit
+WEB アプリ URL：http://54.248.86.202
 
-https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/attendance
+AWS 　 CodeDeploy
 
-ID:testuser-at-058264478200
+・アプリケーション名：attendanceCodeDeploy
 
-PASS:HjIMQM63kzH0KrdHfZOwuDyAKUZ/HrrnL/22JsToTuE=
+・デプロイグループ：attendanceCodeDployGroup
 
-AWS　（IAMユーザとしてコンソールにサインインする場合は以下を使用してください）
+AWS 　（IAM ユーザとしてコンソールにサインインする場合は以下を使用してください）
 
-コンソールサインイン：https://058264478200.signin.aws.amazon.com/console
+・コンソールサインイン：https://058264478200.signin.aws.amazon.com/console
 
-ユーザー名：testuser
+・ユーザー名：testuser
 
-コンソールパスワード：testuser1&
+・コンソールパスワード：testuser1&
 
-パブリック IP アドレス：http://54.248.86.202/
+・パブリック IP アドレス：http://54.248.86.202/
 
 ##他のリポジトリ
 
+AWS 　 CodeCommit
+
+・URL：https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/attendance
+
+・ID：testuser-at-058264478200
+
+・PASS：HjIMQM63kzH0KrdHfZOwuDyAKUZ/HrrnL/22JsToTuE=
+
 ##機能一覧
 
-会員登録機能（メールによる認証機能あり）
+・会員登録機能（メールによる認証機能あり）
 
-ログイン機能
+・ログイン機能
 
-ログアウト機能
+・ログアウト機能
 
-勤務開始/終了打刻機能
+・勤務開始/終了打刻機能
 
-休憩開始/終了打刻機能
+・休憩開始/終了打刻機能
 
-日付別勤怠情報表示機能
+・日付別勤怠情報表示機能
 
-ユーザ一覧表示機能
+・ユーザ一覧表示機能
 
-ユーザ別勤怠情報表示機能
+・ユーザ別勤怠情報表示機能
 
 ##使用技術（実行環境）
 
-PHP:8.0
+・PHP:8.0
 
-Laravel:8.6.12
+・Laravel:8.6.12
 
-MySQL:8.0.26
+・MySQL:8.0.26
 
-docker-compose:2.23.0
+・docker-compose:2.23.0
 
 ##テーブル設計
 ![Alt text](image.png)
@@ -68,13 +76,13 @@ docker-compose:2.23.0
 
 ##環境構築
 
-Docker ビルド
+・Docker ビルド
 
 1.git clone git@github.com:MinaYamamoto/attendance.git
 
 2.docker-compose up -d --build
 
-Laravel 環境構築
+・Laravel 環境構築
 
 1.PHP コンテナ内にログイン
 　 docker-compose exec php bash
@@ -86,6 +94,7 @@ Laravel 環境構築
 　 cp .env.example .env
 
 4.「.env」ファイルの環境変数を変更
+
 DB_HOST=mysql
 
 DB_DATABASE=laravel_db
@@ -110,11 +119,12 @@ MAIL_FROM_ADDRESS=mailcatcher@example.com
 　 php artisan db:seed
 
 ##その他記述
-開発環境はローカル、本番環境は AWS を使用しています。
 
-AWS は SSL 認証の設定を行っていません。「http」にてアクセスしてください。
+・開発環境はローカル、本番環境は AWS を使用しています。
 
-認証メールの確認には MailCatcher を使用しています。
+・AWS は SSL 認証の設定を行っていません。「http」にてアクセスしてください。
+
+・認証メールの確認には MailCatcher を使用しています。
 
 ローカルで認証メールを確認する場合は「http://localhost:1080/」にアクセスしてください。
 

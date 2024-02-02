@@ -15,8 +15,6 @@ class TimeRecordController extends Controller
         $message = $user->name . 'さんお疲れ様です!';
         $today = Carbon::now();
         $yesterday = Carbon::yesterday();
-        // テスト用
-        // $comparison_day = strtotime($today->setDate(2024,1,15)->format('Y-m-d'));
         $comparison_day = strtotime($today->format('Y-m-d'));
         $old_work = Work::where('user_id', $user->id)->whereNull('end_time')->first();
         $leaving_work_count = Work::where('user_id', $user->id)->where('work_date', $today->format('Y-m-d'))->whereNotNull('end_time')->count();
